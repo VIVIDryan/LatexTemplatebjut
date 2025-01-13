@@ -38,10 +38,15 @@
 
 \newcommand\bjut@fontset{\csname g__ctex_fontset_tl\endcsname}
 % TODO windows font config
-\setCJKfamilyfont{song}{Songti SC}[AutoFakeBold=1.75]
-\setCJKfamilyfont{hei}{SimHei}[AutoFakeBold=1.75]
-\setCJKfamilyfont{kai}{Kaiti SC}[AutoFakeBold=1.75]
-\setCJKfamilyfont{fang}{STFangsong}[AutoFakeBold=4.5]
+% \setCJKfamilyfont{song}{Songti SC}[AutoFakeBold=1.75]
+% \setCJKfamilyfont{hei}{SimHei}[AutoFakeBold=1.75]
+% \setCJKfamilyfont{kai}{Kaiti SC}[AutoFakeBold=1.75]
+% \setCJKfamilyfont{fang}{STFangsong}[AutoFakeBold=4.5]
+\setCJKfamilyfont{song}{SimSun.ttc}[Path=./font/, Extension=.ttc,AutoFakeBold=1.75]
+\setCJKfamilyfont{hei}{SimHei.ttf}[Path=./font/, Extension=.ttf,AutoFakeBold=1.75]
+\setCJKfamilyfont{kai}{Kaiti.ttf}[Path=./font/, Extension=.ttf,AutoFakeBold=1.75]
+\setCJKfamilyfont{fang}{FangSong.ttf}[Path=./font/, Extension=.ttf,AutoFakeBold=4.5]
+
 
 \renewcommand{\songti}{\CJKfamily{song}}
 \renewcommand{\heiti}{\CJKfamily{hei}}
@@ -449,7 +454,7 @@
 
 \setlength{\textfloatsep}{1em}
 
-\RequirePackage[thmmarks]{ntheorem}
+\RequirePackage[thmmarks, amsmath]{ntheorem}
 \theorembodyfont{\normalfont}
 \theoremheaderfont{\normalfont\heiti}
 \theoremsymbol{\ensuremath{\square}}
