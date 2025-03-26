@@ -1,6 +1,21 @@
 %!TEX program = xelatex
 \documentclass{bjutthesis}
 
+%% 文本符号
+\usepackage{textcomp}
+\usepackage{array}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\graphicspath{{content/fig}}
+\DeclareGraphicsExtensions{.pdf,.jpeg,.png,.eps}
+
+\newif\ifusepub
+\usepubfalse  % 盲审版
+% \usepubtrue  % 非盲审版
+
+\ifusepub
 \bjutset{
   clc = {TP18},
   udc = {004},
@@ -19,20 +34,39 @@
   ccollege = {},
   corganization = {},
 }
+\else
+\bjutset{
+  clc = {TP18},
+  udc = {004},
+  schoolcode = {10005},
+  secretlevel = {公开},
+  ctitle = {},
+  cauthor = {},
+  cdiscipline = {},
+  csupervisor = {},
+  csupervstitle = {},
+  cdate = {},
+  studentid = {},
+  etitle = {},
+  cmajor = {},
+  cdegree = {},
+  ccollege = {},
+  corganization = {},
+}
+\fi
 
 \begin{document}
 \makecover
 \maketitle
 \makestate
 \frontmatter
-\include{cabstract}
-\include{eabstract}
+\include{content/cabstract}
+\include{content/eabstract}
 \makebitoc
 \mainmatter
-\include{chapt1}
-\include{chapt_intro}
-\makebib{reference}
+\include{content/chapt1}
+\makebib{content/reference}
 \backmatter
-\include{publication}
-\include{acknowledgement}
+\include{content/publication}
+\include{content/acknowledgement}
 \end{document}

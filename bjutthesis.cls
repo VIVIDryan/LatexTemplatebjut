@@ -21,8 +21,11 @@
 }
 
 % font settings
+\RequirePackage{fontspec,times}
+\RequirePackage{type1cm}
+\setmainfont{Times New Roman}
 \RequirePackage[T1]{fontenc}
-\PassOptionsToPackage{no-math}{fontspec}
+% \PassOptionsToPackage{no-math}{fontspec}
 % IMPORTANT
 \RequirePackage[nofontspec]{newtxtext}
 \RequirePackage{mathptmx}
@@ -56,11 +59,6 @@
 
 \xeCJKsetup{CJKspace=true}
 
-%\renewcommand{\baselinestretch}{1.3}
-
-% 组内往届毕业生封面部分英文数字使用了加粗黑体
-% 这与规范文件不符，又组内毕业生的模版均为古早毕业生流传下来的word版本
-% 姑且以为他们全都错了。
 
 %\xeCJKDeclareCharClass{CJK}{`0 -> `9}
 %\xeCJKDeclareCharClass{CJK}{`A -> `Z}
@@ -104,10 +102,10 @@
 
 \fancypagestyle{bjut@headings}{
   \fancyhead{}
-  \fancyhead[OC]{\bjut@header@font\leftmark}
+  \fancyhead[OC]{\nouppercase{\bjut@header@font\leftmark}}
   \fancyhead[EC]{\bjut@header@font\bjut@header@text}
   \fancyfoot{}
-  \fancyfoot[C]{\zihao{-5}--\ \thepage\ --}
+  \fancyfoot[C]{\zihao{-5}\thepage}
   \renewcommand{\headrulewidth}{0.4pt}
   \renewcommand{\footrulewidth}{\z@}
 }
@@ -153,7 +151,6 @@
 
 % cross references
 \RequirePackage{hyperref}
-\RequirePackage{cleveref}
 \hypersetup{
   bookmarksnumbered  = true,
   bookmarksopen      = true,
@@ -163,6 +160,7 @@
   plainpages         = false,
   pdfborder          = 0 0 0
 }
+\RequirePackage{cleveref}
 \urlstyle{same}
 
 % item
@@ -249,7 +247,7 @@
     % TODO check
     \newgeometry{left=10mm,right=10mm,top=10mm}
     \pagecolor{bjut@color@coverbg}
-    \begin{flushleft}\zihao{5}\heiti\bfseries
+    \begin{flushleft}\fontsize{10.0pt}{11.5bp}\selectfont\heiti\bfseries
       \renewcommand\arraystretch{.75}
       \begin{tabular}{@{}p{28mm}@{：}l}
         \makebox[28mm][s]{中文图书分类号} & \ez@clc \\
@@ -271,7 +269,7 @@
       \makebox[10.8cm][s]{\fontsize{24}{30}\selectfont MASTERAL DISSERTATION}
     \end{center}
     \vfill
-    \begin{center}\zihao{-2}\heiti
+    \begin{center}\zihao{3}\heiti
       \renewcommand\arraystretch{1.6}
       \begin{tabularx}{140mm}{@{}r@{：}X@{}}
         \makebox[45mm][s]{论文题目}      & \ez@ctitle \\
